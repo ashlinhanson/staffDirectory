@@ -5,9 +5,10 @@ import Search from "./components/Search";
 
 function App() {
   return (
-    <Header>
+    <div>
+      <Header/>
       <Search/>
-    </Header>
+    </div>
 
   );
 }

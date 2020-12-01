@@ -3,7 +3,7 @@ import React from "react";
 function Search(){
     return (
         <form>
-            <div className="form-group">
+            <div className="form-group text-center">
                 <label>Search:</label>
                 <input name="search"
                 type="text"
