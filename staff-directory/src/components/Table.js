@@ -3,7 +3,8 @@ import React, { Component } from "react";
 
 class Table extends Component {
     state = {
-        
+        search: "",
+        sortOrder: "ASC",
     }
     
     
