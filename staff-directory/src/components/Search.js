@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search(){
+function Search(props){
     return (
         <form>
             <div className="form-group text-center">
@@ -8,7 +8,11 @@ function Search(){
                 <input name="search"
                 type="text"
                 className="form-group"
-                placeholder="Search Staff"/>
+                placeholder="Search Staff"
+                value={props.search}/>
+                <button onClick={props.handleFormSubmit} className="btn btn-primary">
+                Search
+                </button>
             </div>
         </form>
     );
