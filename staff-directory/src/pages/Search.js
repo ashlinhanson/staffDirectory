@@ -3,6 +3,7 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
+import SortBtns from "../components/SortBtns";
 
 class Search extends Component {
     state = {
@@ -25,17 +26,38 @@ class Search extends Component {
         this.setState({ search: event.target.value});
     };
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     API.getUsers(this.state.search)
-    //     .then(res =>  {
-    //         if(res.data.status === "error") {
-    //             throw new Error(res.data.data);
-    //         }
-    //         this.setState({results: res.data.data, error: ""});
-    //     })
-    //     .catch(err => this.setState({ error: err.message }))
-    // };
+    firstNameAsc = () => {
+        const users = this.state.users.sort((a, b) =>
+            a.name.first.localeCompare(b.name.first)
+        );
+        this.setState({ users: users })
+    }
+
+    lastNameAsc = () => {
+        const users = this.state.users.sort((a,b) =>
+            a.name.last.localeCompare(b.name.last)
+        );
+        this.setState({ users: users })
+    }
+
+    locationAsc = () => {
+        const users = this.state.users.sort((a, b) =>
+            a.location.country.localeCompare(b.location.country)
+        );
+        this.setState({ users: users })
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        API.getUsers(this.state.search)
+        .then(res =>  {
+            if(res.data.status === "error") {
+                throw new Error(res.data.data);
+            }
+            this.setState({results: res.data.data, error: ""});
+        })
+        .catch(err => this.setState({ error: err.message }))
+    };
 
     render(){
         return (
@@ -46,6 +68,11 @@ class Search extends Component {
                 //   handleFormSubmit={this.handleFormSubmit}
                   handleInputChange={this.handleInputChange}
                   users={this.state.users}
+                />
+                <SortBtns
+                firstNameAsc={this.firstNameAsc}
+                lastNameAsc ={this.lastNameAsc}
+                locationAsc={this.locationAsc}
                 />
                 <SearchResults users={this.state.users} search={this.state.search} />
               </Container>

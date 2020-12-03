@@ -18,7 +18,7 @@ function SearchResults(props) {
       <tbody>
         {props.users.map(user => (
             <tr>
-              <td scope="row" key={user.picture.thumbnail}><img src={user.picture.thumbnail} alt={user.name.first} /></td>
+              <td scope="row" key={user.picture.thumbnail}><img src={user.picture.medium} alt={user.name.first}/></td>
               <td scope="row" key={user.name.first}>{user.name.first}</td>
               <td scope="row" key={user.name.last}>{user.name.last}</td>
               <td scope="row" key={user.email}>{user.email}</td>
