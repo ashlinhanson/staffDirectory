@@ -8,9 +8,9 @@ function Search(props){
                 <input name="search"
                 type="text"
                 className="form-group"
-                placeholder="Search Staff"
+                placeholder="Search Staff..."
                 value={props.search}/>
-                <button onClick={props.handleFormSubmit} className="btn btn-primary">
+                <button onChange={props.handleFormSubmit} className="btn btn-primary">
                 Search
                 </button>
             </div>
