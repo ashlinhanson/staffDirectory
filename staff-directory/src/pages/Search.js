@@ -47,17 +47,17 @@ class Search extends Component {
         this.setState({ users: users })
     }
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        API.getUsers(this.state.search)
-        .then(res =>  {
-            if(res.data.status === "error") {
-                throw new Error(res.data.data);
-            }
-            this.setState({results: res.data.data, error: ""});
-        })
-        .catch(err => this.setState({ error: err.message }))
-    };
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     API.getUsers(this.state.search)
+    //     .then(res =>  {
+    //         if(res.data.status === "error") {
+    //             throw new Error(res.search.results);
+    //         }
+    //         this.setState({results: res.search.results , error: ""});
+    //     })
+    //     .catch(err => this.setState({ error: err.message }))
+    // };
 
     render(){
         return (
@@ -65,7 +65,7 @@ class Search extends Component {
               <Container style={{ minHeight: "80%" }}>
                 <h4 className="text-center">Search for Staff Members!</h4>
                 <SearchForm
-                //   handleFormSubmit={this.handleFormSubmit}
+                  handleFormSubmit={this.handleFormSubmit}
                   handleInputChange={this.handleInputChange}
                   users={this.state.users}
                 />

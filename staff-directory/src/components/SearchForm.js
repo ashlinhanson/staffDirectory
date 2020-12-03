@@ -11,7 +11,7 @@ function SearchForm(props) {
                 className="form-group"
                 placeholder="Search Staff..."
                 value={props.search}/>
-                <button onChange={props.handleFormSubmit} className="btn btn-secondary mx-2">
+                <button onChange={props.handleInputChange} className="btn btn-secondary mx-2">
                 Search
                 </button>
             </div>
