@@ -1,3 +1,4 @@
+// setting up dependencies and importing components
 import React, { Component } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
@@ -23,7 +24,7 @@ class Search extends Component {
     }
 
     handleInputChange = event => {
-        this.setState({ search: event.target.value});
+        this.setState({ users: event.target.value});
     };
 
     firstNameAsc = () => {
@@ -61,9 +62,10 @@ class Search extends Component {
     // };
     handleFormSubmit = event => {
         event.preventDefault();
-        this.state.users.filter((user) =>
-          user.name.last.toLowerCase().includes(this.state.search.toLowerCase())
+        this.state.search.filter((user) =>
+          user.name.last.includes(this.state.search.toLowerCase())
         );
+        console.log("this is working!")
       };
 
     render(){
@@ -75,7 +77,7 @@ class Search extends Component {
                 <SearchForm
                 //   onClick={this.handleFormSubmit}
                 //   onChange={this.handleInputChange}
-                  users={this.state.users}
+                //   users={this.state.results}
                 />
                 <SortBtns
                 firstNameAsc={this.firstNameAsc}
