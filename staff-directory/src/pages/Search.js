@@ -22,27 +22,27 @@ class Search extends Component {
         .catch(err => console.log(err));
     }
 
-    handleInputChange = event => {
+    handleChange = event => {
         this.setState({ search: event.target.value});
     };
 
     firstNameAsc = () => {
-        const users = this.state.users.sort((a, b) =>
-            a.name.first.localeCompare(b.name.first)
+        const users = this.state.users.sort((one, two) =>
+            one.name.first.localeCompare(two.name.first)
         );
         this.setState({ users: users })
     }
 
     lastNameAsc = () => {
-        const users = this.state.users.sort((a,b) =>
-            a.name.last.localeCompare(b.name.last)
+        const users = this.state.users.sort((one, two) =>
+            one.name.last.localeCompare(two.name.last)
         );
         this.setState({ users: users })
     }
 
     locationAsc = () => {
-        const users = this.state.users.sort((a, b) =>
-            a.location.country.localeCompare(b.location.country)
+        const users = this.state.users.sort((one, two) =>
+            one.location.country.localeCompare(two.location.country)
         );
         this.setState({ users: users })
     }
@@ -50,23 +50,31 @@ class Search extends Component {
     // handleFormSubmit = event => {
     //     event.preventDefault();
     //     API.getUsers(this.state.search)
-    //     .then(res =>  {
-    //         if(res.data.status === "error") {
-    //             throw new Error(res.search.results);
-    //         }
-    //         this.setState({results: res.search.results , error: ""});
-    //     })
-    //     .catch(err => this.setState({ error: err.message }))
+
+        // .then(res =>  {
+        //     if(res.data.status === "error") {
+        //         throw new Error(res.search.results);
+        //     }
+        //     this.setState({results: res.search.results , error: ""});
+        // })
+        // .catch(err => this.setState({ error: err.message }))
     // };
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.state.users.filter((user) =>
+          user.name.last.toLowerCase().includes(this.state.search.toLowerCase())
+        );
+      };
 
     render(){
+
         return (
             <div>
               <Container style={{ minHeight: "80%" }}>
                 <h4 className="text-center">Search for Staff Members!</h4>
                 <SearchForm
-                  handleFormSubmit={this.handleFormSubmit}
-                  handleInputChange={this.handleInputChange}
+                //   onClick={this.handleFormSubmit}
+                //   onChange={this.handleChange}
                   users={this.state.users}
                 />
                 <SortBtns

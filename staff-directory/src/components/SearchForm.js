@@ -7,12 +7,14 @@ function SearchForm(props) {
             <div className="form-group text-center mx-auto">
                 <label className="mx-2 my-4">Search:</label>
                 <input name="search"
-                type="text"
+                type="search"
                 className="form-group"
                 placeholder="Search Staff..."
-                value={props.search}/>
-                <button onChange={props.handleInputChange} className="btn btn-secondary mx-2">
-                Search
+                onChange={props.handleChange}
+                value={props.search}
+                />
+                <button type="submit" onClick={props.handleFormSubmit} className="btn btn-secondary">
+                    Search
                 </button>
             </div>
         </form>

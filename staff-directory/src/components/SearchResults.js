@@ -18,13 +18,13 @@ function SearchResults(props) {
       <tbody>
         {props.users.map(user => (
             <tr>
-              <td scope="row" key={user.picture.thumbnail}><img src={user.picture.medium} alt={user.name.first}/></td>
-              <td scope="row" key={user.name.first}>{user.name.first}</td>
-              <td scope="row" key={user.name.last}>{user.name.last}</td>
-              <td scope="row" key={user.email}>{user.email}</td>
-              <td scope="row" key={user.phone}>{user.phone}</td>
-              <td scope="row" key={user.dob.age}>{user.dob.age} years old</td>
-              <td scope="row" key={user.location.country}>{user.location.country}</td>
+              <td key={user.picture.thumbnail}><img src={user.picture.medium} alt={user.name.first}/></td>
+              <td key={user.name.first}>{user.name.first}</td>
+              <td key={user.name.last}>{user.name.last}</td>
+              <td key={user.email}>{user.email}</td>
+              <td key={user.phone}>{user.phone}</td>
+              <td key={user.dob.age}>{user.dob.age} years old</td>
+              <td key={user.location.country}>{user.location.country}</td>
             </tr>
           ))
         }
