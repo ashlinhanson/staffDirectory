@@ -22,7 +22,7 @@ class Search extends Component {
         .catch(err => console.log(err));
     }
 
-    handleChange = event => {
+    handleInputChange = event => {
         this.setState({ search: event.target.value});
     };
 
@@ -74,7 +74,7 @@ class Search extends Component {
                 <h4 className="text-center">Search for Staff Members!</h4>
                 <SearchForm
                 //   onClick={this.handleFormSubmit}
-                //   onChange={this.handleChange}
+                //   onChange={this.handleInputChange}
                   users={this.state.users}
                 />
                 <SortBtns

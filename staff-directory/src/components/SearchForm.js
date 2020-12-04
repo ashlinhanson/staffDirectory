@@ -10,7 +10,7 @@ function SearchForm(props) {
                 type="search"
                 className="form-group"
                 placeholder="Search Staff..."
-                onChange={props.handleChange}
+                onChange={props.handleInputChange}
                 value={props.search}
                 />
                 <button type="submit" onClick={props.handleFormSubmit} className="btn btn-secondary">
