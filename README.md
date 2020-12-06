@@ -1,5 +1,7 @@
 # Staff Directory 
  This React web application is designed to randomly generate a staff of 20 people and allows you to organize them by first name, last name, or location.  
+## Deployed link : https://ashlinhanson.github.io/staffDirectory/
+
  ## Table of Contents 
  * [Installation Instructions](#Installation-Instructions) 
  * [Instructions for Use](#Instructions-for-Use) 
@@ -12,14 +14,14 @@
  3. Start the app via "npm start". 
  ## Instructions for Use 
   1. The previous step should open your browser to localhost: 3000. 
-  [![Initial page](./assets/initialopen.png)]
+  [![Initial page](./assets/images/initialopen.png)]
   2. Organize the staff that's given to you.
 
   An example of using the first name button
-  [![Sort by first name](./assets/firstname.png)] 
+  [![Sort by first name](./assets/images/firstname.png)] 
 
   An example of using the last name button
-  [![WSort by last name](./assets/lastname.png)]
+  [![WSort by last name](./assets/images/lastname.png)]
 
  ## Contributions 
  Ashli Hanson - Owner and sole contributor. Open to contributions 
