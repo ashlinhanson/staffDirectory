@@ -1,0 +1,9 @@
+.btn {
+    background-color: #BFAB25 !important;
+    font-family: "Oswald";
+}
+
+.btn:hover {
+    background-color: #746716 !important;
+    color: #F4F4F2 !important;
+}

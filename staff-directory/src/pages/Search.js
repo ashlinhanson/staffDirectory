@@ -1,22 +1,19 @@
 // setting up dependencies and importing components
 import React, { Component } from "react";
-// import API from "../utils/API";
-import SearchForm from "../components/SearchForm";
-// import SearchResults from "../components/SearchResults";
 import SortBtns from "../components/SortBtns";
 import Table from "../components/Table";
 import API from "../utils/API";
 
 class Search extends Component {
-
+    //set the state
         state = {
             search: "",
             users: []
         };
 
+    //When the component mounts, get a list of all available base breeds and update 
     componentDidMount(){
         API.getUsers()
-        // .then((res) => res.json())
         .then((users) => {
             console.log(users);
             this.setState({ users: users.data.results })
@@ -55,19 +52,18 @@ class Search extends Component {
         this.setState({ users: users })
     }
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        API.getUsers(this.state.search)
-
-        .then(res =>  {
-            if(res.data.status === "error") {
-                throw new Error(res.search.results);
-            }
-            this.setState({results: res.search.results , error: ""});
-        })
-        .catch(err => this.setState({ error: err.message }))
-        console.log("ksjdfljh")
-    };
+    // will need when search form works
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     API.getUsers(this.state.search)
+    //     .then(res =>  {
+    //         if(res.data.status === "error") {
+    //             throw new Error(res.search.results);
+    //         }
+    //         this.setState({results: res.search.results , error: ""});
+    //     })
+    //     .catch(err => this.setState({ error: err.message }))
+    // };
     // handleFormSubmit = event => {
     //     event.preventDefault();
     //     this.state.search.filter((user) =>
@@ -85,11 +81,12 @@ class Search extends Component {
 
         return (
             <div>
-                <SearchForm
-                //   onClick={this.handleFormSubmit}
+                {/* will need when search form works */}
+                {/* <SearchForm
+                  onClick={this.handleFormSubmit}
                   onChange={this.handleInputChange}
-                //   users={this.state.results}
-                />
+                  users={this.state.results}
+                /> */}
                 <SortBtns
                 firstNameAsc={this.firstNameAsc}
                 lastNameAsc ={this.lastNameAsc}

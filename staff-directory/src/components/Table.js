@@ -1,9 +1,10 @@
 import React from "react";
-
+import "./styles/Table.css"
+//table component
 function Table(props) {
     return (
 
-    <table style={{ width: "100%" }} className="col-12 mx-auto table table-striped rounded">
+    <table style={{ width: "100%" }} className="col-12 mx-auto table rounded">
       <thead>
         <tr>
         {/* each column for data element */}
@@ -21,7 +22,7 @@ function Table(props) {
         {props.users.map((user) => (
             <tr>
                 {/* each type of data from the api to fill the columns */}
-              <th scope="row" key={user.phone}><img src={user.picture.large} alt={user.name.first}/></th>
+              <th scope="row" key={user.phone}><img src={user.picture.large} alt={user.name.first} className="image"/></th>
               <td>{user.name.first}</td>
               <td>{user.name.last}</td>
               <td>{user.email}</td>
