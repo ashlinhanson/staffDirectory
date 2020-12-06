@@ -14,14 +14,14 @@
  3. Start the app via "npm start". 
  ## Instructions for Use 
   1. The previous step should open your browser to localhost: 3000. 
-  [![Initial page](./assets/screenshots/initialopen.png)]
+  ![Initial page](./assets/screenshots/initialopen.png)
   2. Organize the staff that's given to you.
 
   An example of using the first name button
-  [![Sort by first name](./assets/screenshots/firstname.png)] 
+  ![Sort by first name](./assets/screenshots/firstname.png)
 
   An example of using the last name button
-  [![Sort by last name](./assets/screenshots/lastname.png)]
+  ![Sort by last name](./assets/screenshots/lastname.png)
 
  ## Contributions 
  Ashli Hanson - Owner and sole contributor. Open to contributions 
